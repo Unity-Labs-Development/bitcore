@@ -1,11 +1,36 @@
 <head-nav [chainNetwork]="chainNetwork"></head-nav>
 
-<ion-content>
+<ion-content padding>
   <ion-grid fixed>
     <div class="page-content">
-      <h2>Latest Blocks</h2>
-      <latest-blocks [showTimeAs]="'age'" [showAllBlocksButton]="true" [chainNetwork]="chainNetwork" #latestBlocks>
-      </latest-blocks>
+    
+      <div class="latest-blocks">
+        <h1>最新区块</h1>
+        <latest-blocks [showTimeAs]="'age'" [showAllBlocksButton]="true" [chainNetwork]="chainNetwork" #latestBlocks>
+        </latest-blocks>
+      </div>
+      <div class="latest-blocks">
+        <h1>最新交易</h1>
+        <latest-transactions [refreshSeconds]="8"></latest-transactions>
+      </div>
+      <div class="about">
+          <p>
+            <strong>Insight</strong> is an open-source Bitcoin blockchain explorer developed by
+            <a href="https://bitpay.com/" target="_blank">BitPay</a>. Insight also provides a complete REST and websocket API, giving developers access to more advanced blockchain
+            queries than those provided by many Bitcoin node implementations.</p>
+          <p>
+            The Insight project is available
+            <a href="https://github.com/bitpay/insight" target="_blank">on GitHub</a>.</p>
+          <div id="powered" class="row">
+            <div class="powered-text">
+              <small class="text-muted">Powered by</small>
+            </div>
+            <a href="http://bitcore.io" target="_blank" class="bitcore" title="Bitcore"></a>
+            <a href="https://angular.io/" target="_blank" class="angular" title="Angular"></a>
+            <a href="https://code.google.com/p/leveldb/" target="_blank" class="leveldb" title="LevelDB"></a>
+            <a href="http://nodejs.org" target="_blank" class="nodejs" title="NodeJs"></a>
+          </div>
+        </div>
     </div>
   </ion-grid>
 </ion-content>
