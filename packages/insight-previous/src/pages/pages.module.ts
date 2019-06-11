@@ -10,6 +10,7 @@ import { BlocksPageModule } from '../pages/blocks/blocks.module';
 import { BroadcastTxPageModule } from './broadcast-tx/broadcast-tx.module';
 import { HomePageModule } from './home/home.module';
 import { MessagesPageModule } from './messages/messages.module';
+// import { StatusPageModule } from './status/status.module';
 
 @NgModule({
   declarations: [],
@@ -24,7 +25,8 @@ import { MessagesPageModule } from './messages/messages.module';
     HeadNavComponentModule,
     LatestTransactionsComponentModule,
     LatestBlocksComponentModule,
-    ErrorComponentModule
+    ErrorComponentModule,
+    // StatusPageModule
   ],
   exports: [
     // CustomComponent,

@@ -62,6 +62,12 @@ export class HeadNavComponent implements OnInit {
     });
   }
 
+  public goStatus(): void {
+    this.redirProvider.redir('home', {
+      
+    });
+  }
+
   public search(): void {
     this.q = this.q.replace(/\s/g, '');
     const inputDetails = this.searchProvider.isInputValid(this.q);

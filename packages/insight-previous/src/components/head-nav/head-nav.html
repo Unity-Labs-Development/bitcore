@@ -1,6 +1,8 @@
 <ion-header no-border>
   <ion-navbar hideBackButton>
     <ion-title (click)="goHome(chainNetwork)" class="logo-header">Michael</ion-title>
+    <!-- <ion-title (click)="goStatus" class="logo-header">Michael</ion-title> -->
+
     <ion-buttons class="search-button" ion-button clear icon-only (click)="toggleSearch()">
       <ion-icon name="search" [color]="!showSearch ? 'light' : 'dark'"></ion-icon>
     </ion-buttons>
@@ -23,7 +25,7 @@
         <ion-icon name="md-arrow-dropdown"></ion-icon>
       </button> -->
       <!-- <button ion-button (click)="changeCurrency($event)"> -->
-      <button ion-button color = 'white'>
+      <button ion-button color='white' (click)="goStatus()">
         BTC
       </button>
     </ion-buttons>
