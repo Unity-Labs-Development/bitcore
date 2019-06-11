@@ -51,6 +51,10 @@ $colors: (
 
 @import 'ionic.theme.default';
 
+
+$chip-ios-background-color: rgba(0, 0, 0, 0.06);
+$chip-md-background-color: rgba(0, 0, 0, 0.06);
+$chip-wp-background-color: rgba(0, 0, 0, 0.06);
 // Ionicons
 // --------------------------------------------------
 // The premium icon font for Ionic. For more info, please see:
@@ -82,3 +86,7 @@ $grid-breakpoints: (
 $grid-max-widths: (
  lg: 992px
 );
+
+// Other globals
+
+$desktop-min-width: 1288px;

@@ -1,16 +1,17 @@
 page-home {
     @media screen and (min-width: 768px) {
         .latest-blocks {
-        width: 68%;
-        display: inline-block;
+        width: 65%;
+        // display: inline-table;
+        float: left;
         }
-        .about {
-        width: 30%;
+        .about-logo {
+        width: 33%;
         float: right;
         }
     }
 
-    .about {
+    .about-logo {
         background-color: #f4f4f4;
         border: 1px solid #eee;
         border-radius: 5px;
@@ -21,12 +22,14 @@ page-home {
         border-top: 1px solid #ddd;
         margin: 30px auto 0;
         text-align: center;
+        line-height: 1.4;
         width: 90%;
     }
     #powered .powered-text small {
         background-color: #f4f4f4;
         padding: 4px;
         position: relative;
+        line-height: 1.4;
         top: -12px;
     }
 
@@ -34,7 +37,6 @@ page-home {
         background-repeat: no-repeat;
         background-position: center center;
         display: inline-block;
-        float: left;
         height: 45px;
     }
     #powered a.bitcore {
