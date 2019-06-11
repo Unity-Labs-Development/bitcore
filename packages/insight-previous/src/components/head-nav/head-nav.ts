@@ -163,6 +163,14 @@ export class HeadNavComponent implements OnInit {
     });
   }
 
+  public goToBlock(blockHash: string): void {
+    this.redirProvider.redir('block-detail', {
+      blockHash,
+      chain: this.chainNetwork.chain,
+      network: this.chainNetwork.network
+    });
+  }
+
   private setCurrency(currencySymbol?) {
     this.currencyProvider.setCurrency(currencySymbol);
     this.priceProvider.setCurrency(currencySymbol);
