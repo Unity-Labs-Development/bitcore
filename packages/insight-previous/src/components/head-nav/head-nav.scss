@@ -4,9 +4,8 @@ head-nav {
     background: linear-gradient(to right, #00dbe0, #676aed);
   }
   .toolbar-content {
-    // background: linear-gradient(to right, #00dbe0, #676aed);
     display: grid;
-    grid-template-columns: 20% 1fr 20%;
+    grid-template-columns: 20% 1fr 20% ;
     justify-items: stretch;
     align-items: center;
       ion-title {
@@ -23,12 +22,15 @@ head-nav {
           }
         }
       }
+      
+
+
       ion-buttons {
-        color: #124E92;
-        justify-self: end;
+        text-emphasis-color: #FFF;
+        justify-self: center;
       }
       .search{
-        justify-self: center;
+        justify-self: left;
         @media (min-width: map-get($grid-breakpoints, lg)) {
           display: inline-block;
         }
@@ -58,6 +60,7 @@ head-nav {
           font-weight: 100;
         }
       }
+      
   }
   .mobile-searchbar > .toolbar-content {
     display: grid;

@@ -1,8 +1,9 @@
 <ion-header no-border>
   <ion-navbar hideBackButton>
-    <ion-title (click)="goHome(chainNetwork)" class="logo-header">Michael</ion-title>
-    <!-- <ion-title (click)="goStatus" class="logo-header">Michael</ion-title> -->
-
+    <ion-title (click)="goHome(chainNetwork)" class="logo-header">Michael</ion-title>    
+    <!-- <ion-buttons id="status-button" (click)="goStatus()">
+      
+    </ion-buttons> -->
     <ion-buttons class="search-button" ion-button clear icon-only (click)="toggleSearch()">
       <ion-icon name="search" [color]="!showSearch ? 'light' : 'dark'"></ion-icon>
     </ion-buttons>
@@ -11,21 +12,12 @@
       <input dir="auto" placeholder="{{ 'Search for block, transaction or address' }}" [(ngModel)]="q" name="search"
         autocomplete="off" autocorrect="off" spellcheck="false">
     </form>
-
+    
     <ion-buttons>
-      <!-- <button ion-button (click)="changeCurrency($event)">
-        <ion-icon name="logo-bitcoin" *ngIf="currencyProvider?.currencySymbol !== 'BTC'"></ion-icon>
-        <ion-icon name="logo-usd" *ngIf="currencyProvider?.currencySymbol === 'BTC'"></ion-icon>
-        &nbsp;
-        {{ currencyProvider?.currencySymbol }}
-        &nbsp;
-        <i>( <span *ngIf="currencyProvider?.currencySymbol === 'USD'">{{ chainNetwork?.chain }} - </span>
-          {{ chainNetwork?.network }} )</i>
-        &nbsp;
-        <ion-icon name="md-arrow-dropdown"></ion-icon>
-      </button> -->
-      <!-- <button ion-button (click)="changeCurrency($event)"> -->
-      <button ion-button color='white' (click)="goStatus()">
+      <button ion-button (click)="goStatus()">
+        状态
+      </button>
+      <button ion-button (click)="goStatus()">
         BTC
       </button>
     </ion-buttons>
@@ -38,3 +30,15 @@
     </form>
   </ion-toolbar>
 </ion-header>
+     <!-- <button ion-button (click)="changeCurrency($event)">
+        <ion-icon name="logo-bitcoin" *ngIf="currencyProvider?.currencySymbol !== 'BTC'"></ion-icon>
+        <ion-icon name="logo-usd" *ngIf="currencyProvider?.currencySymbol === 'BTC'"></ion-icon>
+        &nbsp;
+        {{ currencyProvider?.currencySymbol }}
+        &nbsp;
+        <i>( <span *ngIf="currencyProvider?.currencySymbol === 'USD'">{{ chainNetwork?.chain }} - </span>
+          {{ chainNetwork?.network }} )</i>
+        &nbsp;
+        <ion-icon name="md-arrow-dropdown"></ion-icon>
+      </button> -->
+      <!-- <button ion-button (click)="changeCurrency($event)"> -->
