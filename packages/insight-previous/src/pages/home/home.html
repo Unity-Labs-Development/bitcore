@@ -3,26 +3,24 @@
 <ion-content padding>
   <ion-grid fixed>
     <div class="page-content">
-      <div class="latest-blocks">
-        <div>
+        <div class="info-block">
           <h1>最新区块</h1>
           <latest-blocks [showTimeAs]="'age'" [showAllBlocksButton]="true" [chainNetwork]="chainNetwork" #latestBlocks>
           </latest-blocks>
         </div>
-        <div>
+        <div class="info-block">
           <h1>最新交易</h1>
           <latest-transactions [refreshSeconds]="8"></latest-transactions>
         </div>
-      </div>
       
       
-      <div class="about-logo">
+      <div class="about-bottom">
           <h2>关于</h2>
           <p>
-            <strong>Michael Explorer</strong>是一个开源的比特币区块链浏览器，具有完整的REST和websocket API，可用于编写Web钱包和其他需要比bitcoind RPC提供的更高级区块链查询的应用程序。
+            <strong>Ponseidon Explorer</strong>是一个开源的比特币区块链浏览器，具有完整的REST和websocket API，可用于编写Web钱包和其他需要比bitcoind RPC提供的更高级区块链查询的应用程序。
             </p>
           <p>
-            <strong>Michael Explorer</strong>仍在开发中，因此请务必报告任何错误，并在
+            <strong>Ponseidon Explorer</strong>仍在开发中，因此请务必报告任何错误，并在
             <a href="https://github.com/bitpay/insight" target="_blank">GitHub</a>问题跟踪器中提供</p>
           <div id="powered" class="row">
             <div class="powered-text">

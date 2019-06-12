@@ -1,5 +1,6 @@
 page-home {
     @media screen and (min-width: 768px) {
+        background-color: #F8F8FB;
         .latest-blocks {
         width: 65%;
         display: inline-table;
@@ -9,6 +10,14 @@ page-home {
         width: 33%;
         float: right;
         }
+        .info-block{
+        width: 70%;
+        float: center;
+        }
+        .about-bottom {
+        width: 100%;
+        float: bottom;
+        }
     }
 
     .about-logo {
@@ -16,6 +25,14 @@ page-home {
         border: 1px solid #eee;
         border-radius: 5px;
         padding: 14px;
+    }
+
+    .about-bottom {
+        justify-content: center; 
+        background-color: #fff;
+        // border: 1px solid #eee;
+        // border-radius: 5px;
+        padding-top: 50px;
     }
 
     #powered .powered-text {
@@ -28,6 +45,7 @@ page-home {
     #powered .powered-text small {
         background-color: #f4f4f4;
         padding: 4px;
+        
         position: relative;
         line-height: 1.4;
         top: -12px;
