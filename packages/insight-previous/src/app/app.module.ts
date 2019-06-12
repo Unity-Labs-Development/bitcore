@@ -4,6 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { BlocksPage, HomePage, PagesModule } from '../pages';
 import { AddressProvider } from '../providers/address/address';
+import { InfoProvider } from '../providers/appstatus/appstatus';
 import { ApiProvider } from '../providers/api/api';
 import { BlocksProvider } from '../providers/blocks/blocks';
 import { CurrencyProvider } from '../providers/currency/currency';
@@ -14,6 +15,7 @@ import { RedirProvider } from '../providers/redir/redir';
 import { SearchProvider } from '../providers/search/search';
 import { TxsProvider } from '../providers/transactions/transactions';
 import { InsightApp } from './app.component';
+import { from } from 'rxjs/observable/from';
 
 @NgModule({
   declarations: [InsightApp],
@@ -39,7 +41,8 @@ import { InsightApp } from './app.component';
     SearchProvider,
     RedirProvider,
     Logger,
-    AddressProvider
+    AddressProvider,
+    InfoProvider
   ]
 })
 export class AppModule {}

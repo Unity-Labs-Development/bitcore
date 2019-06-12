@@ -63,7 +63,7 @@ export class HeadNavComponent implements OnInit {
   }
 
   public goStatus(): void {
-    this.redirProvider.redir('home', {
+    this.redirProvider.redir('status', {
       
     });
   }

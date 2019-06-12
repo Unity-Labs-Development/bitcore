@@ -1,0 +1,118 @@
+page-status {
+    @media screen and (min-width: 768px) {
+        .app-status {
+        width: 65%;
+        margin-top: 30px;
+        display: inline-table;
+        float: left;
+        border-top: 1px solid #ddd;
+        }
+        .node-info {
+        width: 33%;
+        float: right;
+        }
+    }
+
+    .node-info {
+        background-color: #f4f4f4;
+        border: 1px solid #eee;
+        border-radius: 5px;
+        padding: 14px;
+    }
+
+    table {
+        border-width: 1px;
+        border-collapse: collapse;
+        border-spacing: 0;
+        border-color: gray;
+        display: table;
+        border-collapse: separate;
+        border-spacing: 2px;
+        width: 100%;
+        margin-bottom: 20px;
+        line-height: 1.42857143;
+        vertical-align: top;
+
+
+        tbody {
+            display: table-row-group;
+            vertical-align: middle;
+            border-color: inherit;
+            padding: 8px;
+            line-height: 1.42857143;
+            vertical-align: top;
+            // border-top: 1px solid #ddd;
+            tr {
+                // height: 46px;
+                display: table-row;
+                // vertical-align: inherit;
+                padding-top: 8px;
+                vertical-align: top;
+                border-top: 1px solid #ddd;
+                td {
+                    padding: 8px;
+                    vertical-align: top;
+                    border-top: 1px solid #ddd;
+                    
+                }
+            }
+        }
+    }
+
+    .text-right {
+        text-align: right;
+    }
+
+    .ellipsis {
+        display: block;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    .progress-bar-info {
+        background-color: #5bc0de;
+    }
+    .progress-bar {
+        float: left;
+        width: 0;
+        height: 100%;
+        font-size: 12px;
+        line-height: 20px;
+        color: #fff;
+        text-align: center;
+        background-color: #6078EA;
+        -webkit-box-shadow: inset 0 -1px 0 rgba(0,0,0,.15);
+        box-shadow: inset 0 -1px 0 rgba(0,0,0,.15);
+        -webkit-transition: width .6s ease;
+        transition: width .6s ease;
+        border-radius:6px;
+
+    }
+
+    
+
+    #powered .powered-text {
+        border-top: 1px solid #ddd;
+        margin: 30px auto 0;
+        text-align: center;
+        line-height: 1.4;
+        width: 90%;
+    }
+    #powered .powered-text small {
+        background-color: #f4f4f4;
+        padding: 4px;
+        position: relative;
+        line-height: 1.4;
+        top: -12px;
+    }
+
+    #powered a {
+        background-repeat: no-repeat;
+        background-position: center center;
+        display: inline-block;
+        height: 45px;
+    }
+    
+}
+  
