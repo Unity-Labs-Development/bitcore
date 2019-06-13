@@ -7,7 +7,7 @@ import { CurrencyProvider } from '../../providers/currency/currency';
 export interface ApiBlock {
   height: number;
   nonce: number;
-  bits: number;
+  // bits: number;
   size: number;
   confirmations: number;
   hash: string;
@@ -20,6 +20,15 @@ export interface ApiBlock {
   version: number;
   time: Date;
   timeNormalized: Date;
+  txlength: number;
+  // blocks: [{
+  //   height: string;
+  //   size: string;
+  //   hash: string;
+  //   time: string;
+  //   txlength: string;
+  //   poolInfo: {};
+  // }];
 }
 
 export interface AppBlock {
@@ -30,7 +39,7 @@ export interface AppBlock {
   confirmations: number;
   version: number;
   difficulty: number;
-  bits: string;
+  // bits: string;
   virtualSize: number;
   hash: string;
   time: number;
@@ -66,7 +75,7 @@ export class BlocksProvider {
       merkleroot: block.merkleRoot,
       version: block.version,
       difficulty,
-      bits: block.bits.toString(16),
+      // bits: block.bits.toString(16),
       hash: block.hash,
       time: new Date(block.time).getTime() / 1000,
       tx: {
@@ -94,9 +103,10 @@ export class BlocksProvider {
     chainNetwork: ChainNetwork,
     numBlocks: number = 10
   ): Observable<ApiBlock[]> {
-    const url = `${this.api.getUrlPrefix()}/${chainNetwork.chain}/${
-      chainNetwork.network
-    }/block?limit=${numBlocks}`;
+    // const url = `${this.api.getUrlPrefix()}/${chainNetwork.chain}/${
+    //   chainNetwork.network
+    // }/block?limit=${numBlocks}`;
+    const url = 'https://insight.bitpay.com/api/blocks?limit=5'
     return this.httpClient.get<ApiBlock[]>(url);
   }
 
