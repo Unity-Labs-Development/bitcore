@@ -28,11 +28,13 @@ page-home {
     }
 
     .about-bottom {
+        display: flex;
         justify-content: center; 
         background-color: #fff;
         // border: 1px solid #eee;
         // border-radius: 5px;
         padding-top: 50px;
+        flex-flow: column;
     }
 
     #powered .powered-text {
@@ -45,7 +47,6 @@ page-home {
     #powered .powered-text small {
         background-color: #f4f4f4;
         padding: 4px;
-        
         position: relative;
         line-height: 1.4;
         top: -12px;
