@@ -18,10 +18,19 @@ services:
     environment:
       - DB_HOST=database
     env_file: .env
+    # command: npm --prefix=./packages/bitcore-node start
+    command: ["npm", "--prefix=./packages/bitcore-node", "start"]
 
-#insight:
-  #image: insight
-  #links:
-    #- bitcore-node
-  #environment:
-    #- API_URL=bitcore-node
+  insight:
+    image: bitcore-node
+    links:
+      - bitcore-node
+    environment:
+      - API_URL=bitcore-node
+    # ports:
+    #   - 14200:4200
+    command: ["npm", "--prefix=./packages/insight", "start"]
+
+networks:
+  default:
+    driver: host
