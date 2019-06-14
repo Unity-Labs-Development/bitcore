@@ -18,7 +18,7 @@ export interface ApiBlock {
   reward: number;
   minedBy: string;
   version: number;
-  time: Date;
+  time: number;
   timeNormalized: Date;
   txlength: number;
   // blocks: [{
@@ -38,7 +38,7 @@ export interface AppBlock {
   size: number;
   confirmations: number;
   version: number;
-  difficulty: number;
+  // difficulty: number;
   // bits: string;
   virtualSize: number;
   hash: string;
@@ -65,7 +65,7 @@ export class BlocksProvider {
   ) {}
 
   public toAppBlock(block: ApiBlock): AppBlock {
-    const difficulty: number = 0x1d00ffff / block.bits;
+    // const difficulty: number = 0x1d00ffff / block.bits;
     return {
       height: block.height,
       confirmations: block.confirmations,
@@ -74,7 +74,7 @@ export class BlocksProvider {
       virtualSize: block.size,
       merkleroot: block.merkleRoot,
       version: block.version,
-      difficulty,
+      // difficulty,
       // bits: block.bits.toString(16),
       hash: block.hash,
       time: new Date(block.time).getTime() / 1000,
@@ -128,9 +128,10 @@ export class BlocksProvider {
     hash: string,
     chainNetwork: ChainNetwork
   ): Observable<ApiBlock> {
-    const url = `${this.api.getUrlPrefix()}/${chainNetwork.chain}/${
-      chainNetwork.network
-    }/block/${hash}`;
+    // const url = `${this.api.getUrlPrefix()}/${chainNetwork.chain}/${
+    //   chainNetwork.network
+    // }/block/${hash}`;
+    const url = `https://insight.bitpay.com/api/block/${hash}`;
     return this.httpClient.get<ApiBlock>(url);
   }
 }
