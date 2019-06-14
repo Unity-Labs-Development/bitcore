@@ -135,7 +135,7 @@ export class ApiService {
         .get<Array<{ chain: string; network: string }>>(
           `${this.config.apiPrefix$.getValue()}/status/enabled-chains`
         )
-        .pipe(map(response => response.map<Chain>(chainNetworkToCode)))
+        // .pipe(map(response => response.map<Chain>(chainNetworkToCode)))
     );
 
   streamBlocks = (chain: Chain, params: StreamingFindOptions<IBlock>) =>

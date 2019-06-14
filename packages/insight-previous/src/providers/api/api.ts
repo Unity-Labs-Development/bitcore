@@ -14,6 +14,19 @@ export interface NetworkSettings {
   availableNetworks: ChainNetwork[];
   selectedNetwork: ChainNetwork;
 }
+export interface Info {
+  "version": string,
+  "protocolversion": string,
+  "blocks": string,
+  "timeoffset": string,
+  "connections": string,
+  "proxy": string,
+  "difficulty": string,
+  "testnet": boolean,
+  "relayfee": string,
+  "errors": string,
+  "network": string
+}
 
 @Injectable()
 export class ApiProvider {
@@ -61,6 +74,12 @@ export class ApiProvider {
     const network: string = this.networkSettings.selectedNetwork.network;
     const apiPrefix = `${prefix}/${chain}/${network}`;
     return apiPrefix;
+  }
+
+  public getStatus(): Observable<Info[]>{
+    return this.httpClient.get<Info[]>(
+      'https://insight.bitpay.com/api/status?q=getInfo'
+    ); 
   }
 
   public getConfig(): ChainNetwork {

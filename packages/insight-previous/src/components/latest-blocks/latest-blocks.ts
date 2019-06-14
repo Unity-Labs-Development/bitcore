@@ -58,7 +58,11 @@ export class LatestBlocksComponent implements OnInit, OnDestroy {
       .getBlocks(this.chainNetwork, this.numBlocks)
       .subscribe(
         response => {
-          const blocks = response.map(block =>
+          // const blocks = response.map(block =>
+          //   this.blocksProvider.toAppBlock(block)
+          // );
+          const data = response["blocks"];
+          const blocks = data.map(block =>
             this.blocksProvider.toAppBlock(block)
           );
           this.blocks = blocks;
@@ -82,7 +86,11 @@ export class LatestBlocksComponent implements OnInit, OnDestroy {
       .pageBlocks(since, this.numBlocks, this.chainNetwork)
       .subscribe(
         response => {
-          const blocks = response.map(block =>
+          // const blocks = response.map(block =>
+          //   this.blocksProvider.toAppBlock(block)
+          // );
+          const data = response["blocks"];
+          const blocks = data.map(block =>
             this.blocksProvider.toAppBlock(block)
           );
           this.blocks = this.blocks.concat(blocks);
@@ -100,8 +108,8 @@ export class LatestBlocksComponent implements OnInit, OnDestroy {
   public goToBlock(blockHash: string): void {
     this.redirProvider.redir('block-detail', {
       blockHash,
-      chain: this.chainNetwork.chain,
-      network: this.chainNetwork.network
+      // chain: this.chainNetwork.chain,
+      // network: this.chainNetwork.network
     });
   }
 

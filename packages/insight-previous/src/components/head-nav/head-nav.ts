@@ -62,6 +62,12 @@ export class HeadNavComponent implements OnInit {
     });
   }
 
+  public goStatus(): void {
+    this.redirProvider.redir('status', {
+      
+    });
+  }
+
   public search(): void {
     this.q = this.q.replace(/\s/g, '');
     const inputDetails = this.searchProvider.isInputValid(this.q);
@@ -160,6 +166,14 @@ export class HeadNavComponent implements OnInit {
       } else if (data.currencySymbol !== this.currencyProvider.getCurrency()) {
         this.setCurrency(data.currencySymbol);
       }
+    });
+  }
+
+  public goToBlock(blockHash: string): void {
+    this.redirProvider.redir('block-detail', {
+      blockHash,
+      chain: this.chainNetwork.chain,
+      network: this.chainNetwork.network
     });
   }
 
