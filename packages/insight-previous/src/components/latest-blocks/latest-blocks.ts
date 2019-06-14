@@ -122,8 +122,8 @@ export class LatestBlocksComponent implements OnInit, OnDestroy, OnChanges{
   public goToBlock(blockHash: string): void {
     this.redirProvider.redir('block-detail', {
       blockHash,
-      chain: this.chainNetwork.chain,
-      network: this.chainNetwork.network
+      // chain: this.chainNetwork.chain,
+      // network: this.chainNetwork.network
     });
   }
 

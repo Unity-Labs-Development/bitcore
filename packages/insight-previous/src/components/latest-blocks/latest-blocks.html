@@ -19,7 +19,7 @@
           <a (click)="goToBlock(block.hash)">{{ block.height }}</a>
         </ion-col>
         <ion-col *ngIf="showTimeAs === 'age'">
-            {{ block.time | amFromUnix | amTimeAgo }}
+          {{ block.time  | amFromUnix | amTimeAgo }}
         </ion-col>
         <ion-col *ngIf="showTimeAs === 'timestamp'">
           {{ block.time * 1000 | date:'medium' }}

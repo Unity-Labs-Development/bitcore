@@ -11,8 +11,8 @@ import { TxsProvider } from '../../providers/transactions/transactions';
 @Injectable()
 @IonicPage({
   name: 'block-detail',
-  segment: ':chain/:network/block/:blockHash',
-  // segment: '/block/:blockHash',
+  // segment: ':chain/:network/block/:blockHash',
+  segment: '/block/:blockHash',
   defaultHistory: ['home']
 })
 @Component({
@@ -49,8 +49,8 @@ export class BlockDetailPage {
       network
     };
     this.apiProvider.changeNetwork(this.chainNetwork);
-    this.currencyProvider.setCurrency(this.chainNetwork);
-    this.priceProvider.setCurrency();
+    // this.currencyProvider.setCurrency(this.chainNetwork);
+    // this.priceProvider.setCurrency();
   }
 
   ionViewDidEnter() {
