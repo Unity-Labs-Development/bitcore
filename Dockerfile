@@ -22,6 +22,12 @@ COPY ./packages/crypto-wallet-core/package.json ./packages/crypto-wallet-core/pa
 RUN ./node_modules/.bin/lerna bootstrap
 
 COPY . .
+
+# don't need bitcore-wallet-ui package and insight-previous package
+
+RUN rm -rf ./packages/bitcore-wallet-ui
+RUN rm -rf ./packages/insight-previous
+
 EXPOSE 3000
 EXPOSE 8100
 # CMD ["./node_modules/.bin/lerna", "run", "start"]

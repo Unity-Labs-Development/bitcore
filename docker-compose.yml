@@ -5,7 +5,7 @@ services:
     ports: 
     - 27017:27017
     volumes: 
-    - /data/db:/data/db
+    - ./data/db:/data/db
     
   bitcore-node:
     build: .
@@ -13,15 +13,26 @@ services:
     links:
       - database
     ports:
-      - 8100:8100
+      # - 8100:8100
       - 3000:3000
     environment:
       - DB_HOST=database
     env_file: .env
+    # command: npm --prefix=./packages/bitcore-node start
+    command: ["npm", "--prefix=./packages/bitcore-node", "start"]
 
-#insight:
-  #image: insight
-  #links:
-    #- bitcore-node
-  #environment:
-    #- API_URL=bitcore-node
+  insight:
+    image: bitcore-node
+    links:
+      - bitcore-node
+    environment:
+      - API_URL=bitcore-node
+    ports:
+      - 8100:8100
+    command: ["npm", "--prefix=./packages/insight", "start"]
+
+networks:
+  host:
+    driver: host
+    # external : true
+    # driver: bridge
