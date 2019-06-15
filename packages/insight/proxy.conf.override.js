@@ -21,7 +21,7 @@
  module.exports = {
   '/api': {
     target: {
-      host: 'localhost',
+      host: 'www.vgoscan.com',
       protocol: 'http',
       port: 3000
     },
