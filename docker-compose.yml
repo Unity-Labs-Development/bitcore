@@ -31,6 +31,21 @@ services:
       - 8100:8100
     command: ["npm", "--prefix=./packages/insight", "start"]
 
+  
+  nginx:
+    build: "./packages/insight/nginx/"
+    hostname: "nginx"
+    links:
+      - bitcore-node
+    # volumes:
+    #   - "/hart-chain/nginx/www:/usr/share/nginx/html:ro"
+    #   - "/hart-chain/nginx/conf.d:/etc/nginx/conf.d:ro"
+    #   - "/hart-chain/nginx/certs:/etc/nginx/certs:ro"
+    #   - "/hart-chain/nginx/logs:/var/log/nginx"
+    ports:
+      - "18443:443"
+      - "8080:80"
+
 networks:
   host:
     driver: host
