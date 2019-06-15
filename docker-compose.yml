@@ -33,7 +33,7 @@ services:
 
   
   nginx:
-    build: "./packages/insight/nginx/"
+    build: "./packages/insight/"
     hostname: "nginx"
     links:
       - bitcore-node
