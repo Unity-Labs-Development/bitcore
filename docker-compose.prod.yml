@@ -5,10 +5,9 @@ services:
     ports: 
     - 27017:27017
     volumes: 
-    - ./data/bitcore/db:/data/db
+    - /data/bitcore/db:/data/db
     
   bitcore-node:
-    build: .
     image: bitcore-node
     links:
       - database
@@ -20,15 +19,13 @@ services:
     command: ["npm", "--prefix=./packages/bitcore-node", "start"]
 
   nginx:
-    build: "./packages/insight/"
-    image: bitcore-nginx
-    hostname: "nginx"
+    hostname: "bitcore-nginx"
     links:
       - bitcore-node
     
     ports:
-      - "18443:443"
-      - "8080:80"
+      - "443:443"
+      - "80:80"
 
 networks:
   host:
