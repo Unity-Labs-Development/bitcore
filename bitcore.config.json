@@ -2,48 +2,34 @@
     "bitcoreNode": {
       "chains": {
         "BTC": {
-          "mainnet": {
-            "chainSource": "p2p",
-            "trustedPeers": [
-              {
-                "host": "127.0.0.1",
-                "port": 20008
-              }
-            ],
-            "rpc": {
-              "host": "127.0.0.1",
-              "port": 20009,
-              "username": "username",
-              "password": "password"
-            }
-          },
-          "regtest": {
-            "chainSource": "p2p",
-            "trustedPeers": [
-              {
-                "host": "127.0.0.1",
-                "port": 20020
-              }
-            ],
-            "rpc": {
-              "host": "127.0.0.1",
-              "port": 20021,
-              "username": "username",
-              "password": "password"
-            }
-          }
-        },
-        "VGO": {
             "mainnet": {
               "chainSource": "p2p",
               "trustedPeers": [
                 {
-                  "host": "172.31.190.170",
+                  "host": "47.244.48.118",
                   "port": 7333
                 }
               ],
               "rpc": {
-                "host": "172.31.190.170",
+                "host": "47.91.187.158",
+                "port": 18332,
+                "username": "bitcoinrpc",
+                "password": "bitcoinrpcpw"
+              }
+            }
+        },
+        "VGO": {
+            "mainnet": {
+              "parentChain": "BTC",
+              "chainSource": "p2p",
+              "trustedPeers": [
+                {
+                  "host": "47.91.187.158",
+                  "port": 7333
+                }
+              ],
+              "rpc": {
+                "host": "47.91.187.158",
                 "port": 18332,
                 "username": "bitcoinrpc",
                 "password": "bitcoinrpcpw"
