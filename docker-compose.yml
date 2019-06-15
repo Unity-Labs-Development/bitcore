@@ -21,6 +21,7 @@ services:
 
   nginx:
     build: "./packages/insight/"
+    image: bitcore-nginx
     hostname: "nginx"
     links:
       - bitcore-node
