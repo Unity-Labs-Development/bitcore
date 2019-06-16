@@ -7,7 +7,7 @@ import { CurrencyProvider } from '../../providers/currency/currency';
 export interface ApiBlock {
   height: number;
   nonce: number;
-  // bits: number;
+  bits: number;
   size: number;
   confirmations: number;
   hash: string;
@@ -18,7 +18,7 @@ export interface ApiBlock {
   reward: number;
   minedBy: string;
   version: number;
-  time: number;
+  time: Date;
   timeNormalized: Date;
   txlength: number;
   // blocks: [{
@@ -38,8 +38,8 @@ export interface AppBlock {
   size: number;
   confirmations: number;
   version: number;
-  // difficulty: number;
-  // bits: string;
+  difficulty: number;
+  bits: string;
   virtualSize: number;
   hash: string;
   time: number;
@@ -65,7 +65,7 @@ export class BlocksProvider {
   ) {}
 
   public toAppBlock(block: ApiBlock): AppBlock {
-    // const difficulty: number = 0x1d00ffff / block.bits;
+    const difficulty: number = 0x1d00ffff / block.bits;
     return {
       height: block.height,
       confirmations: block.confirmations,
@@ -74,8 +74,8 @@ export class BlocksProvider {
       virtualSize: block.size,
       merkleroot: block.merkleRoot,
       version: block.version,
-      // difficulty,
-      // bits: block.bits.toString(16),
+      difficulty,
+      bits: block.bits.toString(16),
       hash: block.hash,
       time: new Date(block.time).getTime() / 1000,
       tx: {
@@ -103,10 +103,10 @@ export class BlocksProvider {
     chainNetwork: ChainNetwork,
     numBlocks: number = 10
   ): Observable<ApiBlock[]> {
-    // const url = `${this.api.getUrlPrefix()}/${chainNetwork.chain}/${
-    //   chainNetwork.network
-    // }/block?limit=${numBlocks}`;
-    const url = 'https://insight.bitpay.com/api/blocks?limit=5'
+    const url = `${this.api.getUrlPrefix()}/${chainNetwork.chain}/${
+      chainNetwork.network
+    }/block?limit=${numBlocks}`;
+    // const url = 'https://insight.bitpay.com/api/blocks?limit=5'
     return this.httpClient.get<ApiBlock[]>(url);
   }
 
@@ -139,10 +139,10 @@ export class BlocksProvider {
     hash: string,
     chainNetwork: ChainNetwork
   ): Observable<ApiBlock> {
-    // const url = `${this.api.getUrlPrefix()}/${chainNetwork.chain}/${
-    //   chainNetwork.network
-    // }/block/${hash}`;
-    const url = `https://insight.bitpay.com/api/block/${hash}`;
+    const url = `${this.api.getUrlPrefix()}/${chainNetwork.chain}/${
+      chainNetwork.network
+    }/block/${hash}`;
+    // const url = `https://insight.bitpay.com/api/block/${hash}`;
     return this.httpClient.get<ApiBlock>(url);
   }
 }
