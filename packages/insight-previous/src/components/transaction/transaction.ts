@@ -23,7 +23,7 @@ export class TransactionComponent implements OnInit {
   @Input()
   public tx: any = {};
   @Input()
-  public showCoins = false;
+  public showCoins = true;
   @Input()
   public chainNetwork: ChainNetwork;
   public confirmations: number;
