@@ -35,7 +35,7 @@ export class TransactionListComponent implements OnInit {
         .subscribe(
           response => {
             // Newly Generated Coins (Coinbase) First
-            const txs = response["txs"].map(tx => this.txProvider.toAppTx(tx));
+            const txs = response.map(tx => this.txProvider.toAppTx(tx));
             const sortedTxs = _.sortBy(txs, (tx: any) => {
               return tx.isCoinBase ? 0 : 1;
             });
