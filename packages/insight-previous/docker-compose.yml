@@ -1,0 +1,13 @@
+version: '3'
+services:
+  nginx:
+    image: insight-previous-nginx
+    hostname: "nginx"
+    
+    ports:
+      - "443:443"
+      - "80:80"
+
+networks:
+  default:
+    driver: bridge

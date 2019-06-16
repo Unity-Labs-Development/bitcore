@@ -19,7 +19,8 @@ services:
     command: ["npm", "--prefix=./packages/bitcore-node", "start"]
 
   nginx:
-    hostname: "bitcore-nginx"
+    image: insight-previous-nginx
+    hostname: "insight-previous-nginx"
     links:
       - bitcore-node
     
