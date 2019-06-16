@@ -20,11 +20,9 @@ services:
     command: ["npm", "--prefix=./packages/bitcore-node", "start"]
 
   nginx:
-    build: "./packages/insight/"
-    image: bitcore-nginx
+    build: "./packages/insight-previous/"
+    image: insight-previous-nginx
     hostname: "nginx"
-    links:
-      - bitcore-node
     
     ports:
       - "18443:443"

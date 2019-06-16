@@ -1,12 +1,18 @@
-# FROM bitcore-node
-# CMD ["npm", "--prefix=./packages/insight", "start"]
+FROM node:carbon as builder
+WORKDIR /usr/src/app
+COPY package*.json ./
+RUN npm install
+
+COPY . .
+RUN npm run build
+
+
+
+
+
 
 FROM nginx:1.9
 
-# - "./lib/nginx/www:/usr/share/nginx/html:ro"
-#       - "./lib/nginx/conf.d:/etc/nginx/conf.d:ro"
-#       - "./lib/nginx/certs:/etc/nginx/certs:ro"
-
 COPY nginx/certs /etc/nginx/certs
 COPY nginx/conf.d /etc/nginx/conf.d
-COPY www /usr/share/nginx/html
+COPY --from=builder /usr/src/app/www /usr/share/nginx/html

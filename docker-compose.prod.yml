@@ -21,8 +21,6 @@ services:
   nginx:
     image: insight-previous-nginx
     hostname: "insight-previous-nginx"
-    links:
-      - bitcore-node
     
     ports:
       - "443:443"
