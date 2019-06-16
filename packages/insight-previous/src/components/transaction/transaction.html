@@ -78,7 +78,8 @@
                 [ngClass]="{'disabled-link': getAddress(vin) === 'Unparsed address' }">{{ getAddress(vin) }}</a>
             </p>
           </div>
-          <div [hidden]="!expanded">
+          <!-- <div [hidden]="!expanded"> -->
+          <div>
             <p *ngIf="tx.confirmations > 0">
               <b>确认数</b> {{ tx.confirmations }}</p>
             <p>
@@ -131,8 +132,10 @@
 
           <div item-end>
             {{ currencyProvider.getConvertedNumber(vout.value) | number:'1.0-8' }} {{ currencyProvider.currencySymbol }}
-            <span [hidden]="!vout.spentTxid">(S)</span>
-            <span [hidden]="vout.spentTxid">(U)</span>
+            <span>(S)</span>
+            <span>(U)</span>
+            <!-- <span [hidden]="!vout.spentTxid">(S)</span>
+            <span [hidden]="vout.spentTxid">(U)</span> -->
           </div>
 
           <button item-end ion-button *ngIf="expanded && vout.spentTxid && vout.spentTxid !== '' " (click)="
