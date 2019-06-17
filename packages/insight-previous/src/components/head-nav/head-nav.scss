@@ -5,7 +5,7 @@ head-nav {
   }
   .toolbar-content {
     display: grid;
-    grid-template-columns: 20% 1fr 20% ;
+    grid-template-columns: 5% 30% 1fr 20% ;
     justify-items: stretch;
     align-items: center;
       ion-title {
@@ -70,5 +70,10 @@ head-nav {
     @media (min-width: map-get($grid-breakpoints, lg)) {
       display: none;
     }
+  }
+  .logo {
+    // background-image: url('../../assets/img/vgo_logo.jpg');
+    // size: 20px;
+    width: 70%;
   }
 }
