@@ -20,6 +20,15 @@ export interface ApiBlock {
   version: number;
   time: Date;
   timeNormalized: Date;
+  txlength: number;
+  // blocks: [{
+  //   height: string;
+  //   size: string;
+  //   hash: string;
+  //   time: string;
+  //   txlength: string;
+  //   poolInfo: {};
+  // }];
 }
 
 export interface AppBlock {
@@ -97,6 +106,7 @@ export class BlocksProvider {
     const url = `${this.api.getUrlPrefix()}/${chainNetwork.chain}/${
       chainNetwork.network
     }/block?limit=${numBlocks}`;
+    // const url = 'https://insight.bitpay.com/api/blocks?limit=5'
     return this.httpClient.get<ApiBlock[]>(url);
   }
 
@@ -121,6 +131,7 @@ export class BlocksProvider {
     const url = `${this.api.getUrlPrefix()}/${chainNetwork.chain}/${
       chainNetwork.network
     }/block/${hash}`;
+    // const url = `https://insight.bitpay.com/api/block/${hash}`;
     return this.httpClient.get<ApiBlock>(url);
   }
 }

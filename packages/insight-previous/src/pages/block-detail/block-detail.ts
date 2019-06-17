@@ -12,6 +12,7 @@ import { TxsProvider } from '../../providers/transactions/transactions';
 @IonicPage({
   name: 'block-detail',
   segment: ':chain/:network/block/:blockHash',
+  // segment: '/block/:blockHash',
   defaultHistory: ['home']
 })
 @Component({

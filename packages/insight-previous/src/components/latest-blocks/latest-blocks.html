@@ -19,7 +19,7 @@
           <a (click)="goToBlock(block.hash)">{{ block.height }}</a>
         </ion-col>
         <ion-col *ngIf="showTimeAs === 'age'">
-          {{ block.time | amFromUnix | amTimeAgo }}
+            {{ block.time | amFromUnix | amTimeAgo }}
         </ion-col>
         <ion-col *ngIf="showTimeAs === 'timestamp'">
           {{ block.time * 1000 | date:'medium' }}
@@ -39,7 +39,7 @@
 
       <ion-row *ngIf="showAllBlocksButton">
         <ion-col text-center>
-          <button ion-button small (click)="goToBlocks()" [disabled]="blocks.length == 0">See all blocks</button>
+          <button ion-button small class="blocks" (click)="goToBlocks()" [disabled]="blocks.length == 0">查看所有区块</button>
         </ion-col>
       </ion-row>
 

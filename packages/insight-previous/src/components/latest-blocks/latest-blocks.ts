@@ -61,6 +61,10 @@ export class LatestBlocksComponent implements OnInit, OnDestroy {
           const blocks = response.map(block =>
             this.blocksProvider.toAppBlock(block)
           );
+          // const data = response["blocks"];
+          // const blocks = data.map(block =>
+          //   this.blocksProvider.toAppBlock(block)
+          // );
           this.blocks = blocks;
           this.loading = false;
         },
@@ -85,6 +89,10 @@ export class LatestBlocksComponent implements OnInit, OnDestroy {
           const blocks = response.map(block =>
             this.blocksProvider.toAppBlock(block)
           );
+          // const data = response["blocks"];
+          // const blocks = data.map(block =>
+          //   this.blocksProvider.toAppBlock(block)
+          // );
           this.blocks = this.blocks.concat(blocks);
           this.loading = false;
           infiniteScroll.complete();
