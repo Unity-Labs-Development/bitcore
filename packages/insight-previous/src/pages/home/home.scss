@@ -1,6 +1,5 @@
 page-home {    
     @media screen and (min-width: 768px) {
-        background-color: #F8F8FB;
         .latest-blocks {
         width: 100%;
         display: inline-table;
@@ -11,12 +10,21 @@ page-home {
         float: right;
         }
         .info-block{
-        width: 70%;
+        padding: 20px;
+        width: 80%;
         float: center;
+        margin-top: 0px;
+        margin-left: 120px;
+        margin-right: 120px;
+        background-color: white;
         }
         .about-bottom {
         width: 100%;
         float: bottom;
+        }
+        .logo{
+            margin-top:48px;
+            width: 100%;
         }
     }
 
@@ -42,8 +50,17 @@ page-home {
         background-color: #fff;
         // border: 1px solid #eee;
         // border-radius: 5px;
-        padding-top: 50px;
+        padding: 30px;
+        margin-bottom: 40px;
         flex-flow: column;
+    }
+
+    h2 {
+        text-align:center;
+    }
+
+    p {
+        text-align:center;
     }
 
     #powered .powered-text {
