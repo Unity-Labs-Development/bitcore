@@ -1,0 +1,28 @@
+<head-nav [chainNetwork]="chainNetwork"></head-nav>
+
+<ion-content padding>
+  <ion-grid fixed>
+    <div class="page-content">
+      <div class="latest-blocks">
+        <div>
+          <h1>区块</h1>
+          <latest-blocks [showTimeAs]="'age'" [showAllBlocksButton]="true" [chainNetwork]="chainNetwork" #latestBlocks>
+          </latest-blocks>
+        </div>
+        <!-- <div>
+          <h1>最新交易</h1>
+          <latest-transactions [refreshSeconds]="8"></latest-transactions>
+        </div> -->
+      </div>
+      
+      
+      <div class="about-logo">
+          <h2>开采的块</h2>
+          <h3>世界标准时间</h3>
+          <calender>
+          </calender>
+      </div>
+    </div>
+  </ion-grid>
+</ion-content>
+<footer [chainNetwork]="chainNetwork"></footer>
