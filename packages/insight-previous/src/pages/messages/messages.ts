@@ -12,8 +12,10 @@ import { CurrencyProvider } from '../../providers/currency/currency';
 import { Logger } from '../../providers/logger/logger';
 import { PriceProvider } from '../../providers/price/price';
 
-import * as bitcoreLib from 'bitcore-lib';
-import * as bitcoreLibCash from 'bitcore-lib-cash';
+// import * as bitcoreLib from 'bitcore-lib';
+// import * as bitcoreLibCash from 'bitcore-lib-cash';
+const bitcoreLib = require('bitcore-lib');
+const bitcoreLibCash = require('bitcore-lib-cash');
 
 @Injectable()
 @IonicPage({
