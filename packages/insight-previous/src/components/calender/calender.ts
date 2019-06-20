@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter} from '@angular/core';
 
 @Component({
   selector: 'calender',
@@ -9,8 +9,10 @@ export class CalenderComponent implements OnInit {
   private year:number
   private month:number
   private dateObject
-  private activeDay
-  // 返回上个月份数据
+  public activeDay
+  @Output()
+  public selectDay = new EventEmitter()
+    // 返回上个月份数据
   goPrev(){
     this.month--
     if(this.month==0){
@@ -64,9 +66,10 @@ export class CalenderComponent implements OnInit {
     }
   }
 
-  getClickDay(clickDay) {
-    console.log('click',clickDay,clickDay.year,clickDay.month)
+  public getClickDay(clickDay): any{
+    console.log('click',clickDay)
     this.activeDay=clickDay
+    this.selectDay.emit(clickDay);
     return clickDay;
   }
 
@@ -78,7 +81,7 @@ export class CalenderComponent implements OnInit {
    
   ngOnInit() {
     
-   this.dateObject=this.getDatesOfMonth(this.year,this.month)
+    this.dateObject=this.getDatesOfMonth(this.year,this.month)
   }
 
 }

@@ -110,6 +110,17 @@ export class BlocksProvider {
     return this.httpClient.get<ApiBlock[]>(url);
   }
 
+  public getBlocksByDate(
+    chainNetwork: ChainNetwork,
+    dateString: string
+  ): Observable<ApiBlock[]> {
+    const url = `${this.api.getUrlPrefix()}/${chainNetwork.chain}/${
+      chainNetwork.network
+    }/block?blockDate=${dateString}`;
+    // const url = 'https://insight.bitpay.com/api/blocks?limit=5'
+    return this.httpClient.get<ApiBlock[]>(url);
+  }
+  
   /**
    * example: http://localhost:8100/api/BTC/regtest/block?since=582&limit=100&paging=height&direction=1
    */

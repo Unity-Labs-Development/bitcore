@@ -49,8 +49,6 @@ export class BlockDatePage {
     });
   }
 
-  public getDate(date): void {
-      console.log(date);
-      
+  public onCustomClicked(selectedDay): void{
   }
 }
