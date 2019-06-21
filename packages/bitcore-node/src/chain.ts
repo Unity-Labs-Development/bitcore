@@ -11,4 +11,8 @@ module.exports = {
     lib: require('bitcore-lib'),
     p2p: require('bitcore-p2p'),
   },
+  PON: {
+    lib: require('bitcore-lib'),
+    p2p: require('bitcore-p2p'),
+  }
 }

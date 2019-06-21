@@ -1,8 +1,6 @@
 import { Component, Input, OnInit, ViewChild } from '@angular/core';
-// import * as bitcoreLib from 'bitcore-lib';
-// import * as bitcoreLibCash from 'bitcore-lib-cash';
-const bitcoreLib = require('bitcore-lib');
-const bitcoreLibCash = require('bitcore-lib-cash');
+import { bitcoreLib } from 'bitcore-lib';
+import { bitcoreLibCash } from 'bitcore-lib-cash';
 
 import {
   ActionSheetController,
