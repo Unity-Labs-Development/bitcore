@@ -71,6 +71,12 @@ export class HeadNavComponent implements OnInit {
     });
   }
 
+  public goBlock(): void {
+    this.redirProvider.redir('blockdate', {
+      
+    });
+  }
+
   public search(): void {
     this.q = this.q.replace(/\s/g, '');
     const inputDetails = this.searchProvider.isInputValid(this.q);

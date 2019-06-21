@@ -1,4 +1,4 @@
-import { Component, Input, NgZone, OnDestroy, OnInit } from '@angular/core';
+import { Component, Input, NgZone, OnChanges, OnDestroy, OnInit, SimpleChange} from '@angular/core';
 import { Subscription } from 'rxjs';
 import { ApiProvider, ChainNetwork } from '../../providers/api/api';
 import { AppBlock, BlocksProvider } from '../../providers/blocks/blocks';
@@ -11,7 +11,9 @@ import { RedirProvider } from '../../providers/redir/redir';
   selector: 'latest-blocks',
   templateUrl: 'latest-blocks.html'
 })
-export class LatestBlocksComponent implements OnInit, OnDestroy {
+export class LatestBlocksComponent implements OnInit, OnDestroy, OnChanges{
+  @Input()
+  public dateString: string;
   @Input()
   public numBlocks: number;
   @Input()
@@ -51,6 +53,10 @@ export class LatestBlocksComponent implements OnInit, OnDestroy {
         });
       }, 1000 * seconds);
     });
+  }
+
+  public ngOnChanges(): void {
+    this.getBlockByDate();
   }
 
   private loadBlocks(): void {
@@ -118,6 +124,27 @@ export class LatestBlocksComponent implements OnInit, OnDestroy {
       chain: this.chainNetwork.chain,
       network: this.chainNetwork.network
     });
+  }
+
+  public getBlockByDate(): void {
+    this.subscriber = this.blocksProvider
+      .getBlocksByDate(this.chainNetwork, this.dateString)
+      .subscribe(
+        response => {
+          const blocks = response.map(block =>
+            this.blocksProvider.toAppBlock(block)
+          );
+          this.blocks = blocks;
+          this.loading = false;
+        },
+        err => {
+          this.subscriber.unsubscribe();
+          clearInterval(this.reloadInterval);
+          this.logger.error(err.message);
+          this.errorMessage = err.message;
+          this.loading = false;
+        }
+      );
   }
 
   public reloadData() {
