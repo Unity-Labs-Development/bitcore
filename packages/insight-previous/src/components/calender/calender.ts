@@ -11,7 +11,7 @@ export class CalenderComponent implements OnInit {
   private dateObject
   public activeDay
   @Output()
-  public selectDay = new EventEmitter()
+  public selectDayEvent = new EventEmitter()
     // 返回上个月份数据
   goPrev(){
     this.month--
@@ -57,7 +57,6 @@ export class CalenderComponent implements OnInit {
           }
           
       }
-      console.log(datesArray)
     return {
       year:year,
       nowDay:nowDay,
@@ -67,9 +66,7 @@ export class CalenderComponent implements OnInit {
   }
 
   public getClickDay(clickDay): any{
-    console.log('click',clickDay)
-    this.activeDay=clickDay
-    this.selectDay.emit(clickDay);
+    this.selectDayEvent.emit(clickDay);
     return clickDay;
   }
 
