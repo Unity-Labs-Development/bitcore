@@ -4,7 +4,7 @@
     "singleQuote": true
   },
   "scripts": {
-    "build": "docker build -t bitcore-node .",
+    "build": "docker build -t bitcore-node:pon-v1.0.0 .",
     "watch": "./node_modules/.bin/lerna run watch --parallel",
     "postinstall": "npm run bootstrap && npm run compile",
     "bootstrap": "./node_modules/.bin/lerna bootstrap",
