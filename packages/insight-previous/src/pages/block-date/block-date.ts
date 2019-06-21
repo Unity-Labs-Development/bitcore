@@ -4,6 +4,7 @@ import { LatestBlocksComponent } from '../../components/latest-blocks/latest-blo
 import { ApiProvider, ChainNetwork } from '../../providers/api/api';
 import { CurrencyProvider } from '../../providers/currency/currency';
 import { PriceProvider } from '../../providers/price/price';
+import { stringify } from '@angular/core/src/render3/util';
 
 @Injectable()
 @IonicPage({
@@ -20,6 +21,7 @@ export class BlockDatePage {
   public chain: string;
   private chainNetwork: ChainNetwork;
   public network: string;
+  public dateString: string;
   constructor(
     public nav: Nav,
     public navParams: NavParams,
@@ -50,5 +52,22 @@ export class BlockDatePage {
   }
 
   public onCustomClicked(selectedDay): void{
+    console.log("selectDay",selectedDay.year,selectedDay.month,selectedDay.day)
+    let actday :string
+    if(selectedDay.month<10){
+      selectedDay.month = '0'+ selectedDay.month
+    }else{
+      selectedDay.month = selectedDay.month.string
+    }
+
+    if(selectedDay.day<10){
+      actday = '0'+ selectedDay.day.toString()
+    }else{
+      actday = selectedDay.day.toString()
+    }
+    
+    this.dateString = selectedDay.year+selectedDay.month+actday
+    this.latestBlocks.dateString = this.dateString
+    this.latestBlocks.getBlockByDate()
   }
 }
