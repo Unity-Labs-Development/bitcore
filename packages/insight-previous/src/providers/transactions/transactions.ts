@@ -170,6 +170,7 @@ export class TxsProvider {
     const url = `${this.apiProvider.getUrlPrefix()}/${chainNetwork.chain}/${
       chainNetwork.network
     }/tx/${queryString}`;
+    // const url = `https://insight.bitpay.com/api/txs?block=${args.blockHash}&pageNum=0`;
     return this.httpClient.get<ApiTx[]>(url);
   }
 

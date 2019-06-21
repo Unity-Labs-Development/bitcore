@@ -1,0 +1,26 @@
+page-block-date {
+    @media screen and (min-width: 768px) {
+        .latest-blocks {
+        width: 65%;
+        display: inline-table;
+        // float: left;
+        }
+        .about-logo {
+        width: 30%;
+        float: left;
+        }
+    }
+
+    .about-logo {
+        background-color: #f4f4f4;
+        border: 1px solid #eee;
+        border-radius: 5px;
+        padding: 14px;
+        margin-right: 20px;
+    }
+
+    .calender{
+        width: 90%;
+    }
+}
+  

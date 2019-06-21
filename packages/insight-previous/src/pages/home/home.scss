@@ -1,2 +1,108 @@
-page-home {
+page-home {    
+    @media screen and (min-width: 768px) {
+        .latest-blocks {
+        width: 100%;
+        display: inline-table;
+        // float: left;
+        }
+        .about-logo {
+        width: 33%;
+        float: right;
+        }
+        .info-block{
+        padding: 20px;
+        width: 80%;
+        float: center;
+        margin-top: 0px;
+        margin-left: 120px;
+        margin-right: 120px;
+        background-color: white;
+        }
+        .about-bottom {
+        width: 100%;
+        float: bottom;
+        }
+        .logo{
+            margin-top:48px;
+            width: 100%;
+        }
+    }
+
+
+    .whole-page {
+        background-color:#F8F8FB;
+    }
+
+    .page-content {
+        background-color: #F8F8FB;
+    }
+    
+    .about-logo {
+        background-color: #f4f4f4;
+        border: 1px solid #eee;
+        border-radius: 5px;
+        padding: 14px;
+    }
+
+    .about-bottom {
+        display: flex;
+        justify-content: center; 
+        background-color: #fff;
+        // border: 1px solid #eee;
+        // border-radius: 5px;
+        padding: 30px;
+        margin-bottom: 40px;
+        flex-flow: column;
+    }
+
+    h2 {
+        text-align:center;
+    }
+
+    p {
+        text-align:center;
+    }
+
+    #powered .powered-text {
+        border-top: 1px solid #ddd;
+        margin: 30px auto 0;
+        text-align: center;
+        line-height: 1.4;
+        width: 90%;
+    }
+    #powered .powered-text small {
+        background-color: #f4f4f4;
+        padding: 4px;
+        position: relative;
+        line-height: 1.4;
+        top: -12px;
+    }
+
+    #powered a {
+        background-repeat: no-repeat;
+        background-position: center center;
+        display: inline-block;
+        height: 45px;
+    }
+    #powered a.bitcore {
+        background-image: url('../../assets/img/bitcore.svg');
+        background-size: 80px;
+        width: 30%;
+    }
+    #powered a.nodejs {
+        background-image: url('../../assets/img/nodejs.png');
+        background-size: 80px;
+        width: 30%;
+    }
+    #powered a.angular {
+        background-image: url('../../assets/img/angularjs.png');
+        background-size: 50px;
+        width: 20%;
+    }
+    #powered a.leveldb {
+        background-image: url('../../assets/img/leveldb.png');
+        background-size: 50px;
+        width: 20%;
+    }
 }
+  
