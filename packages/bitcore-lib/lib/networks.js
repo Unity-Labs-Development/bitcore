@@ -142,8 +142,9 @@ addNetwork({
   scripthash: 0x05,
   xpubkey: 0x0488b21e,
   xprivkey: 0x0488ade4,
-  networkMagic: 0xbcdeb4d9,
-  // networkMagic: 0xf9beb4d9,
+  networkMagic: 0xbcdeb4d9, //vgo
+  // networkMagic: 0xbbdeb4d9, //pon
+  // networkMagic: 0xf9beb4d9, //btc
   port: 8333,
   dnsSeeds: [
     'seed.bitcoin.sipa.be',
