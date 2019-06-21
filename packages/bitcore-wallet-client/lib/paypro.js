@@ -6,6 +6,7 @@ const Errors = require('./errors');
 var Bitcore_ = {
   btc: Bitcore,
   bch: require('bitcore-lib-cash'),
+  vgo: Bitcore,
 };
 const request = require('request');
 const JSON_PAYMENT_REQUEST_CONTENT_TYPE = 'application/payment-request';

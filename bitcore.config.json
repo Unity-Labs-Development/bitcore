@@ -1,0 +1,23 @@
+{
+    "bitcoreNode": {
+      "chains": {
+        "VGO": {
+            "mainnet": {
+              "chainSource": "p2p",
+              "trustedPeers": [
+                {
+                  "host": "172.31.190.170",
+                  "port": 7333
+                }
+              ],
+              "rpc": {
+                "host": "172.31.190.170",
+                "port": 18332,
+                "username": "bitcoinrpc",
+                "password": "bitcoinrpcpw"
+              }
+            }
+          }
+      }
+    }
+  }

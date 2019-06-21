@@ -26,7 +26,8 @@
   },
   "scripts": {
     "clean": "ionic-app-scripts clean",
-    "build:prod": "ENV=prod CHAIN=BTC NETWORK=mainnet API_PREFIX=https://api.bitcore.io/api npm run ionic:build --prod",
+    "docker:build": "docker build -t insight-previous-nginx .",
+    "build:prod": "ENV=prod CHAIN=VGO NETWORK=mainnet API_PREFIX=/api npm run ionic:build --prod",
     "serve:prod": "npm run clean && npm run build:prod && npm run serve",
     "serve": "serve www",
     "ionic:build": "ionic-app-scripts build",
@@ -53,6 +54,7 @@
     "ionicons": "3.0.0",
     "lodash": "4.17.11",
     "rxjs": "5.5.12",
+    "socket.io-client": "^2.2.0",
     "zone.js": "0.8.12"
   },
   "devDependencies": {
@@ -84,5 +86,6 @@
   },
   "engines": {
     "node": ">=8"
-  }
+  },
+  "__npminstall_done": false
 }

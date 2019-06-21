@@ -5,6 +5,8 @@ node_modules/
 .vscode
 .DS_Store
 *.swp
+build/
+data/
 
 # VIM ignore
 [._]*.s[a-w][a-z]

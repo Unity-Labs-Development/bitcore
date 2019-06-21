@@ -9,6 +9,7 @@ var Bitcore = require('bitcore-lib');
 var Bitcore_ = {
   btc: Bitcore,
   bch: require('bitcore-lib-cash'),
+  vgo: Bitcore,
 };
 var Mnemonic = require('bitcore-mnemonic');
 var sjcl = require('sjcl');

@@ -9,6 +9,7 @@ var Bitcore = require('bitcore-lib');
 var Bitcore_ = {
   btc: Bitcore,
   bch: require('bitcore-lib-cash'),
+  vgo: Bitcore,
 };
 var PrivateKey = Bitcore.PrivateKey;
 var PublicKey = Bitcore.PublicKey;
