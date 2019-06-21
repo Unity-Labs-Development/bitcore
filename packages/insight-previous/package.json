@@ -26,7 +26,7 @@
   },
   "scripts": {
     "clean": "ionic-app-scripts clean",
-    "docker:build": "docker build -t insight-previous-nginx .",
+    "docker:build": "docker build -t insight-previous-nginx:vgo-v1.0.0 .",
     "build:prod": "ENV=prod CHAIN=VGO NETWORK=mainnet API_PREFIX=/api npm run ionic:build --prod",
     "serve:prod": "npm run clean && npm run build:prod && npm run serve",
     "serve": "serve www",

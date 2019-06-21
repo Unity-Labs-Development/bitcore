@@ -9,7 +9,7 @@ services:
     
   bitcore-node:
     build: .
-    image: bitcore-node
+    image: bitcore-node:vgo-v1.0.0
     links:
       - database
     ports:
@@ -18,15 +18,6 @@ services:
       - DB_HOST=database
     env_file: .env
     command: ["npm", "--prefix=./packages/bitcore-node", "start"]
-
-  nginx:
-    build: "./packages/insight-previous/"
-    image: insight-previous-nginx
-    hostname: "nginx"
-    
-    ports:
-      - "18443:443"
-      - "8080:80"
 
 networks:
   host:
