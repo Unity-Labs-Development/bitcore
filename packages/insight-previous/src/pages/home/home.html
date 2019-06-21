@@ -9,11 +9,27 @@
           <latest-blocks [showTimeAs]="'age'" [showAllBlocksButton]="true" [chainNetwork]="chainNetwork" #latestBlocks>
           </latest-blocks>
         </div>
-        <!-- <div>
+        <!-- <div class="info-block">
           <h1>最新交易</h1>
           <latest-transactions [refreshSeconds]="8"></latest-transactions>
         </div> -->
-
+    </div>
+    <div class="about-bottom">
+      <h2>关于</h2>
+      <p>
+        <strong>Ponseidon Explorer</strong>是一个开源的比特币区块链浏览器，具有完整的REST和websocket API，可用于编写Web钱包和其他需要比bitcoind RPC提供的更高级区块链查询的应用程序。
+        </p>
+      <p>
+        <strong>Ponseidon Explorer</strong>仍在开发中，因此请务必报告任何错误，并在
+        <a href="https://github.com/bitpay/insight" target="_blank">GitHub</a>问题跟踪器中提供</p>
+      <div id="powered" class="row">
+        <div class="powered-text">
+          <small class="text-muted">Powered by</small>
+        </div>
+        <a href="http://bitcore.io" target="_blank" class="bitcore" title="Bitcore"></a>
+        <a href="https://angular.io/" target="_blank" class="angular" title="Angular"></a>
+        <a href="https://code.google.com/p/leveldb/" target="_blank" class="leveldb" title="LevelDB"></a>
+        <a href="http://nodejs.org" target="_blank" class="nodejs" title="NodeJs"></a>
       </div>
     </div>
   </ion-grid>
