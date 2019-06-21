@@ -6,7 +6,7 @@
       <div class="latest-blocks">
         <div>
           <h1>区块</h1>
-          <latest-blocks [showTimeAs]="'age'" [showAllBlocksButton]="true" [chainNetwork]="chainNetwork" #latestBlocks>
+          <latest-blocks [showTimeAs]="'age'" [showAllBlocksButton]="true" [chainNetwork]="chainNetwork"  #latestBlocks>
           </latest-blocks>
         </div>
       </div>
@@ -15,7 +15,7 @@
       <div class="about-logo">
           <h2>开采的块</h2>
           <h3>世界标准时间</h3>
-          <calender (selectDay)="onCustomClicked($event)">
+          <calender (selectDayEvent)="onCustomClicked($event)">
           </calender>
       </div>
     </div>
