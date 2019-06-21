@@ -1,7 +1,7 @@
 head-nav {
   
   .toolbar-background {
-    background: linear-gradient(to right, #00dbe0, #676aed);
+    background: linear-gradient(to right, #3D35EE, #55BDFD);
   }
   .toolbar-content {
     display: grid;
@@ -70,5 +70,10 @@ head-nav {
     @media (min-width: map-get($grid-breakpoints, lg)) {
       display: none;
     }
+  }
+  .logo {
+    // background-image: url('../../assets/img/vgo_logo.jpg');
+    // size: 20px;
+    width: 70%;
   }
 }
