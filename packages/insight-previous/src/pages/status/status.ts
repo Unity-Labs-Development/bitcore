@@ -49,7 +49,7 @@ export class StatusPage {
 
   public ionViewWillLoad(): void {
     this.infoProvider
-      .getSync()
+      .getSync(this.chainNetwork)
       .subscribe(
         data => {
           this.statusSync = {
@@ -66,7 +66,7 @@ export class StatusPage {
         }
       );
     this.infoProvider
-      .getStatus()
+      .getStatus(this.chainNetwork)
       .subscribe(
         data => {
           const info = data.info
@@ -89,7 +89,7 @@ export class StatusPage {
         }
     );
     this.infoProvider
-      .getLastBlock()
+      .getLastBlock(this.chainNetwork)
       .subscribe(
         data => {
           this.statusLastBlock = {

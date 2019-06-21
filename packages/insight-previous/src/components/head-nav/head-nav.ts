@@ -8,7 +8,8 @@ import {
   NavController,
   PopoverController,
   Searchbar,
-  ToastController
+  ToastController,
+  Toolbar
 } from 'ionic-angular';
 import * as _ from 'lodash';
 import { ApiProvider, ChainNetwork } from '../../providers/api/api';
@@ -25,12 +26,16 @@ import { DenominationComponent } from '../denomination/denomination';
 })
 export class HeadNavComponent implements OnInit {
   @ViewChild('searchbar') searchbar: Searchbar;
+  @ViewChild('')
   public showSearch = false;
   public loading: boolean;
   @Input()
   public title: string;
   @Input()
   public chainNetwork: ChainNetwork;
+  @Input()
+  isHome = false;
+  
   public q: string;
   public redirTo: any;
   public params: any;
@@ -54,6 +59,7 @@ export class HeadNavComponent implements OnInit {
       chain: this.chainNetwork.chain,
       network: this.chainNetwork.network
     };
+
   }
 
   public goHome(chainNetwork): void {
