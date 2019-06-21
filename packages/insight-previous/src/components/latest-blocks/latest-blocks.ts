@@ -1,4 +1,4 @@
-import { Component, Input, NgZone, OnChanges, OnDestroy, OnInit, SimpleChange} from '@angular/core';
+import { Component, Input, NgZone, OnDestroy, OnInit, SimpleChange} from '@angular/core';
 import { Subscription } from 'rxjs';
 import { ApiProvider, ChainNetwork } from '../../providers/api/api';
 import { AppBlock, BlocksProvider } from '../../providers/blocks/blocks';
@@ -11,7 +11,7 @@ import { RedirProvider } from '../../providers/redir/redir';
   selector: 'latest-blocks',
   templateUrl: 'latest-blocks.html'
 })
-export class LatestBlocksComponent implements OnInit, OnDestroy, OnChanges{
+export class LatestBlocksComponent implements OnInit, OnDestroy{
   @Input()
   public dateString: string;
   @Input()
@@ -54,10 +54,7 @@ export class LatestBlocksComponent implements OnInit, OnDestroy, OnChanges{
       }, 1000 * seconds);
     });
   }
-
-  public ngOnChanges(): void {
-    this.getBlockByDate();
-  }
+  
 
   private loadBlocks(): void {
     this.subscriber = this.blocksProvider
@@ -67,10 +64,7 @@ export class LatestBlocksComponent implements OnInit, OnDestroy, OnChanges{
           const blocks = response.map(block =>
             this.blocksProvider.toAppBlock(block)
           );
-          // const data = response["blocks"];
-          // const blocks = data.map(block =>
-          //   this.blocksProvider.toAppBlock(block)
-          // );
+
           this.blocks = blocks;
           this.loading = false;
         },
@@ -127,6 +121,7 @@ export class LatestBlocksComponent implements OnInit, OnDestroy, OnChanges{
   }
 
   public getBlockByDate(): void {
+    console.log("target"+this.dateString);
     this.subscriber = this.blocksProvider
       .getBlocksByDate(this.chainNetwork, this.dateString)
       .subscribe(
