@@ -1,7 +1,7 @@
 {
     "bitcoreNode": {
       "chains": {
-        "VGO": {
+        "PON": {
             "mainnet": {
               "chainSource": "p2p",
               "trustedPeers": [
