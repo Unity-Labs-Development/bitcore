@@ -2,8 +2,8 @@ import { Component, Injectable, ViewChild } from '@angular/core';
 import { Events, IonicPage, Nav, NavParams } from 'ionic-angular';
 import { LatestBlocksComponent } from '../../components/latest-blocks/latest-blocks';
 import { ApiProvider, ChainNetwork } from '../../providers/api/api';
-import { CurrencyProvider } from '../../providers/currency/currency';
 import { InfoProvider } from '../../providers/appstatus/appstatus';
+import { CurrencyProvider } from '../../providers/currency/currency';
 import { Logger } from '../../providers/logger/logger';
 
 @Injectable()
@@ -24,6 +24,7 @@ export class StatusPage {
   public statusSync: any = {};
   private chainNetwork: ChainNetwork;
   private logger: Logger;
+  public errorMessage: string;
 
   public network: string;
   constructor(
@@ -62,7 +63,8 @@ export class StatusPage {
           };
         },
         err => {
-          this.logger.error(err.message);
+          // this.logger.error(err.message);
+          this.errorMessage = err.message;
         }
       );
     this.infoProvider
@@ -85,7 +87,8 @@ export class StatusPage {
           };
         },
         err => {
-          this.logger.error(err.message);
+          // this.logger.error(err.message);
+          this.errorMessage = err.message;
         }
     );
     this.infoProvider
@@ -98,7 +101,8 @@ export class StatusPage {
           }
         },
         err => {
-          this.logger.error(err.message);
+          // this.logger.error(err.message);
+          this.errorMessage = err.message;
         }
     );
     
