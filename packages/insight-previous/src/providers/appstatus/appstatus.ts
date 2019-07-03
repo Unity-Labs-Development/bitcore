@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { ApiProvider, ChainNetwork } from '../../providers/api/api';
 import { CurrencyProvider } from '../../providers/currency/currency';
-import { type } from 'os';
+// import { type } from 'os';
 
 export interface ApiInfo {
   info: any;
@@ -26,6 +26,7 @@ export interface ApiLastBlock {
 }
 
 export interface ApiSync {
+  
   status: string,
   blockChainHeight: string,
   syncPercentage: string,
@@ -45,21 +46,25 @@ export class InfoProvider {
   ) {}
 
 
-  public getStatus(): Observable<ApiInfo>{
-    return this.httpClient.get<ApiInfo>(
-      'https://insight.bitpay.com/api/status?q=getInfo'
-    ); 
+  public getStatus(chainNetwork: ChainNetwork): Observable<ApiInfo>{
+    const url = `${this.apiProvider.getUrlPrefix()}/${chainNetwork.chain}/${
+      chainNetwork.network
+    }/status?q=getInfo`;
+    return this.httpClient.get<ApiInfo>(url);
   }
 
-  public getLastBlock(): Observable<ApiLastBlock>{
-    return this.httpClient.get<ApiLastBlock>(
-      'https://insight.bitpay.com/api/status?q=getLastBlockHash'
-    ); 
+  
+  public getLastBlock(chainNetwork: ChainNetwork): Observable<ApiLastBlock>{
+    const url = `${this.apiProvider.getUrlPrefix()}/${chainNetwork.chain}/${
+      chainNetwork.network
+    }/status?q=getLastBlockHash`;
+    return this.httpClient.get<ApiLastBlock>(url);
   }
 
-  public getSync(): Observable<ApiSync>{
-    return this.httpClient.get<ApiSync>(
-      'https://insight.bitpay.com/api/sync'
-    ); 
+  public getSync(chainNetwork: ChainNetwork): Observable<ApiSync>{
+    const url = `${this.apiProvider.getUrlPrefix()}/${chainNetwork.chain}/${
+      chainNetwork.network
+    }/sync`;
+    return this.httpClient.get<ApiSync>(url);
   }
 }

@@ -76,10 +76,11 @@ export class ApiProvider {
     return apiPrefix;
   }
 
-  public getStatus(): Observable<Info[]>{
-    return this.httpClient.get<Info[]>(
-      'https://insight.bitpay.com/api/status?q=getInfo'
-    ); 
+  public getStatus(chainNetwork: ChainNetwork): Observable<Info>{
+    const url = `${this.getUrlPrefix()}/${chainNetwork.chain}/${
+      chainNetwork.network
+    }/status?q=getInfo`;
+    return this.httpClient.get<Info>(url);
   }
 
   public getConfig(): ChainNetwork {

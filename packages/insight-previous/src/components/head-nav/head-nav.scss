@@ -1,8 +1,13 @@
 head-nav {
   
+  .toolbar-background.home {
+    background: #FF000000;
+  }
+
   .toolbar-background {
     background: linear-gradient(to right, #3D35EE, #55BDFD);
   }
+
   .toolbar-content {
     display: grid;
     grid-template-columns: 30% 1fr 20% ;

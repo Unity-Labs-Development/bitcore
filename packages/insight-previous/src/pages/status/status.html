@@ -1,5 +1,6 @@
 <head-nav [chainNetwork]="chainNetwork"></head-nav>
-<ion-content padding>
+<error [message]="errorMessage" *ngIf="errorMessage"></error>
+<ion-content padding *ngIf="!errorMessage">
   <ion-grid fixed>
     <div class="page-content">
       <h1>应用状态</h1>

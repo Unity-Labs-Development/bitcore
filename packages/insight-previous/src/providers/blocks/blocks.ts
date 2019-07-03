@@ -116,7 +116,7 @@ export class BlocksProvider {
   ): Observable<ApiBlock[]> {
     const url = `${this.api.getUrlPrefix()}/${chainNetwork.chain}/${
       chainNetwork.network
-    }/block?blockDate=${dateString}`;
+    }/block?date=${dateString}`;
     // const url = 'https://insight.bitpay.com/api/blocks?limit=5'
     return this.httpClient.get<ApiBlock[]>(url);
   }
